@@ -141,6 +141,12 @@ export async function buildProject(
           `bundle/msi/${fileAppName}_${app.version}_${arch}_${lang}.msi.zip.sig`
         )
       );
+      winArtifacts.push(
+        join(
+          artifactsPath,
+          `${fileAppName}.exe`
+        )
+      );
     });
 
     artifacts = winArtifacts.map((path) => ({ path, arch }));
